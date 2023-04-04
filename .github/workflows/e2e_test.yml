@@ -1,0 +1,12 @@
+name: e2e-test
+
+on:
+  pull_request:
+
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Replace @main with the commit hash of the latest commit on the pull request branch
+      - uses: nilsreichardt/verify-safe-to-test-label@main

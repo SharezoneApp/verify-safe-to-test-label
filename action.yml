@@ -1,0 +1,10 @@
+name: 'Remove "safe to test" label'
+description: 'Removes the "safe to test" label if the PR is a fork and the label is present'
+inputs:
+  label:
+    description: 'The name of the lable that should be removed when it is present'
+    required: false
+    default: 'safe to test'
+runs:
+  using: 'node16'
+  main: 'index.js'
