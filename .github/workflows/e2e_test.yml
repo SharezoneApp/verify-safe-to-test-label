@@ -2,6 +2,7 @@ name: e2e-test
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
 
 jobs:
   e2e-test:
