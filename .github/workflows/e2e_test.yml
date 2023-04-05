@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Replace @main with the commit hash of the latest commit on the pull request branch
-      - uses: nilsreichardt/verify-safe-to-test-label@main
+      - uses: SharezoneApp/verify-safe-to-test-label@main

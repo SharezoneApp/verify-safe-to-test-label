@@ -24,7 +24,7 @@ This GitHub Action removes the "safe to test" label when the PR is from a fork.
 
 To remove the "safe to test" label when someone pushes a new commit to the PR,
 use the
-[remove-safe-to-test-label](https://github.com/nilsreichardt/verify-safe-to-test-label)
+[remove-safe-to-test-label](https://github.com/SharezoneApp/verify-safe-to-test-label)
 GitHub Action.
 
 ## Usage
@@ -37,7 +37,7 @@ jobs:
       # This will fail if the PR is from a fork and the "safe to test" label is
       # not present.
       - name: Ensure PR has "safe to test" label, if PR is from a fork
-        uses: nilsreichardt/verify-safe-to-test-label@v1
+        uses: SharezoneApp/verify-safe-to-test-label@v1
       
       - name: Do something with secrets
 ```
