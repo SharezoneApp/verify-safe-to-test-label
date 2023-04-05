@@ -1,0 +1,4 @@
+# The node_modules needs to be in the repository because this required by GitHub
+# Actions.
+#
+# node_modules/
