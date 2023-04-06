@@ -5,9 +5,10 @@ async function run() {
     try {
         const context = github.context;
 
-        const allowedEvents = ['pull_request', 'pull_request_target', 'merge_group'];
-        if (allowedEvents.indexOf(context.eventName) === -1) {
-            core.setFailed(`This action only works with the following events: ${allowedEvents.join(', ')}.`);
+        const allowedEvents = ['pull_request', 'pull_request_target'];
+        const isNotAllowedEvent = allowedEvents.indexOf(context.eventName) === -1;
+        if (isNotAllowedEvent) {
+            console.log(`Event "${context.eventName}", skipping. This action only works with the following events: ${allowedEvents.join(', ')}.`);
             return;
         }
 
