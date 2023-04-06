@@ -30,6 +30,12 @@ GitHub Action.
 ## Usage
 
 ```yaml
+on:
+  # This action only works with pull_request and pull_request_target events.
+  # 
+  # For other events, it succeeds with exit code 0.
+  pull_request: # or pull_request_target
+
 jobs:
   analyze:
     runs-on: ubuntu-latest

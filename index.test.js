@@ -106,7 +106,7 @@ describe('verify-safe-to-test-label', () => {
         expect(core.setFailed).toHaveBeenCalledTimes(0);
     });
 
-    test('should fail when eventName is not allowed', async () => {
+    test('should skip when eventName is not allowed', async () => {
         const payload = {
             pull_request: {
                 head: {
@@ -133,9 +133,8 @@ describe('verify-safe-to-test-label', () => {
 
         await run();
 
-        expect(core.setFailed).toHaveBeenCalledWith(
-            `This action only works with the following events: pull_request, pull_request_target, merge_group.`
-        );
+        expect(core.setFailed).toHaveBeenCalledTimes(0);
+        expect(github.getOctokit).toHaveBeenCalledTimes(0);
     });
 
     test('should fail when there is an error', async () => {
